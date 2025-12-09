@@ -35,13 +35,9 @@ def find_leftmost_index(elements, value, key: Callable = identity) -> Optional[i
         index += 1
     return index
 
-
 def find_leftmost(elements, value, key: Callable = identity):
     idx = find_leftmost_index(elements, value, key)
     return None if idx is None else elements[idx]
-
-# ------
-# 
 
 def find_rightmost(elements, value, key: Callable = identity):
     idx = find_rightmost_index(elements, value, key)
