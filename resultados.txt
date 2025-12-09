@@ -1,0 +1,41 @@
+=== Diseño factorial completo (PyDOE3) ===
+Número de casos: 1500
+[[0. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 0.]
+ [2. 0. 0. 0. 0.]
+ ...
+ [2. 4. 4. 2. 3.]
+ [3. 4. 4. 2. 3.]
+ [4. 4. 4. 2. 3.]]
+
+=== Casos de prueba pairwise (AllPairs) ===
+Número de casos: 29
+Test 1: {'Resolución': '360p', 'Sistema Operativo': 'Windows', 'Navegador/App': 'Chrome', 'Usuarios Concurrentes': '10', 'Red': 'WiFi'}
+Test 2: {'Resolución': '480p', 'Sistema Operativo': 'Linux', 'Navegador/App': 'Firefox', 'Usuarios Concurrentes': '50', 'Red': 'WiFi'}
+Test 3: {'Resolución': '720p', 'Sistema Operativo': 'macOS', 'Navegador/App': 'Safari', 'Usuarios Concurrentes': '100', 'Red': 'WiFi'}
+Test 4: {'Resolución': '1080p', 'Sistema Operativo': 'Android', 'Navegador/App': 'Edge', 'Usuarios Concurrentes': '100', 'Red': '4G'}
+Test 5: {'Resolución': '4K', 'Sistema Operativo': 'iOS', 'Navegador/App': 'App móvil', 'Usuarios Concurrentes': '50', 'Red': '4G'}
+Test 6: {'Resolución': '4K', 'Sistema Operativo': 'Android', 'Navegador/App': 'Safari', 'Usuarios Concurrentes': '10', 'Red': '5G'}
+Test 7: {'Resolución': '1080p', 'Sistema Operativo': 'macOS', 'Navegador/App': 'Firefox', 'Usuarios Concurrentes': '10', 'Red': 'Ethernet'}
+Test 8: {'Resolución': '720p', 'Sistema Operativo': 'Linux', 'Navegador/App': 'Chrome', 'Usuarios Concurrentes': '50', 'Red': 'Ethernet'}
+Test 9: {'Resolución': '480p', 'Sistema Operativo': 'Windows', 'Navegador/App': 'App móvil', 'Usuarios Concurrentes': '100', 'Red': 'Ethernet'}
+Test 10: {'Resolución': '360p', 'Sistema Operativo': 'iOS', 'Navegador/App': 'Edge', 'Usuarios Concurrentes': '100', 'Red': '5G'}
+Test 11: {'Resolución': '360p', 'Sistema Operativo': 'Linux', 'Navegador/App': 'Safari', 'Usuarios Concurrentes': '50', 'Red': '4G'}
+Test 12: {'Resolución': '480p', 'Sistema Operativo': 'Android', 'Navegador/App': 'Chrome', 'Usuarios Concurrentes': '50', 'Red': '5G'}
+Test 13: {'Resolución': '720p', 'Sistema Operativo': 'iOS', 'Navegador/App': 'Firefox', 'Usuarios Concurrentes': '10', 'Red': '4G'}
+Test 14: {'Resolución': '1080p', 'Sistema Operativo': 'Windows', 'Navegador/App': 'Safari', 'Usuarios Concurrentes': '50', 'Red': '5G'}
+Test 15: {'Resolución': '4K', 'Sistema Operativo': 'macOS', 'Navegador/App': 'Edge', 'Usuarios Concurrentes': '50', 'Red': 'Ethernet'}
+Test 16: {'Resolución': '4K', 'Sistema Operativo': 'Linux', 'Navegador/App': 'App móvil', 'Usuarios Concurrentes': '10', 'Red': '5G'}
+Test 17: {'Resolución': '480p', 'Sistema Operativo': 'macOS', 'Navegador/App': 'Edge', 'Usuarios Concurrentes': '10', 'Red': '4G'}
+Test 18: {'Resolución': '4K', 'Sistema Operativo': 'Windows', 'Navegador/App': 'Firefox', 'Usuarios Concurrentes': '100', 'Red': '4G'}
+Test 19: {'Resolución': '1080p', 'Sistema Operativo': 'iOS', 'Navegador/App': 'Chrome', 'Usuarios Concurrentes': '100', 'Red': 'WiFi'}
+Test 20: {'Resolución': '720p', 'Sistema Operativo': 'Android', 'Navegador/App': 'App móvil', 'Usuarios Concurrentes': '50', 'Red': 'WiFi'}
+Test 21: {'Resolución': '360p', 'Sistema Operativo': 'macOS', 'Navegador/App': 'App móvil', 'Usuarios Concurrentes': '50', 'Red': '5G'}
+Test 22: {'Resolución': '360p', 'Sistema Operativo': 'Android', 'Navegador/App': 'Firefox', 'Usuarios Concurrentes': '50', 'Red': 'Ethernet'}
+Test 23: {'Resolución': '720p', 'Sistema Operativo': 'Windows', 'Navegador/App': 'Edge', 'Usuarios Concurrentes': '50', 'Red': '5G'}
+Test 24: {'Resolución': '4K', 'Sistema Operativo': 'iOS', 'Navegador/App': 'Chrome', 'Usuarios Concurrentes': '50', 'Red': '4G'}
+Test 25: {'Resolución': '1080p', 'Sistema Operativo': 'Linux', 'Navegador/App': 'Edge', 'Usuarios Concurrentes': '100', 'Red': 'WiFi'}
+Test 26: {'Resolución': '480p', 'Sistema Operativo': 'iOS', 'Navegador/App': 'Safari', 'Usuarios Concurrentes': '50', 'Red': 'Ethernet'}
+Test 27: {'Resolución': '4K', 'Sistema Operativo': 'macOS', 'Navegador/App': 'Chrome', 'Usuarios Concurrentes': '50', 'Red': 'WiFi'}
+Test 28: {'Resolución': '1080p', 'Sistema Operativo': 'macOS', 'Navegador/App': 'App móvil', 'Usuarios Concurrentes': '50', 'Red': 'WiFi'}
+Test 29: {'Resolución': '4K', 'Sistema Operativo': 'macOS', 'Navegador/App': 'Firefox', 'Usuarios Concurrentes': '50', 'Red': '5G'}
