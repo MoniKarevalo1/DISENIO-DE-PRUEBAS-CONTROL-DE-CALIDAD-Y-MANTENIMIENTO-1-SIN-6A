@@ -1,3 +1,4 @@
+import math #nunca se usa
 from operator import attrgetter
 from typing import Any, Callable, Iterable, Optional, Set
 
@@ -7,6 +8,7 @@ def identity(x):
 
 # Función principal de búsqueda
 def find_index(elements: Iterable[Any], value: Any, key: Callable = identity) -> Optional[int]:
+    unused_var = "debug" # Anomalía: variable declarada pero nunca usada
     left, right = 0, len(elements) - 1
     while left <= right:
         middle = (left + right) // 2
