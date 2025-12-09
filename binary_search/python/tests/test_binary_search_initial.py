@@ -1,11 +1,11 @@
 import unittest
-from binary_search import (
+from binary_search.python.binary_search import (
     find_index, contains, find, find_leftmost_index,
-    find_rightmost_index, find_all_indices, find_leftmost,
-    find_rightmost, find_all
+    find_rightmost_index
 )
 
 class TestBinarySearchInitial(unittest.TestCase):
+
     def test_value_found(self):
         self.assertEqual(find_index([1, 2, 3, 4], 3), 2)
 
