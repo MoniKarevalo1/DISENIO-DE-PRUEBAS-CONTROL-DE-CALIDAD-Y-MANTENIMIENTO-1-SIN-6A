@@ -32,4 +32,27 @@ describe('Binary Search (Jasmine)', () => {
     expect(find(arr, 5)).toBe(5);     // devuelve elemento
     expect(find(arr, 6)).toBe(null);  // devuelve null
   });
+
+  // Creación del test con mocking avanzado
+const logic = require("../binary_search/js/binarySearchLogic");
+const externalModule = require("../binary_search/js/externalModule");
+
+describe("Mocking avanzado con Jasmine", function() {
+  it("simula el módulo externo con espía personalizado", async function() {
+    // 1️⃣ Interceptamos la función externa
+    spyOn(externalModule, "fetchData").and.callFake(() => {
+      return Promise.resolve({ value: 10 }); // 2️⃣ Simulamos respuesta
+    });
+
+    // 3️⃣ Ejecutamos la función que depende del módulo
+    const result = await logic.processExternalData();
+
+    // 4️⃣ Verificamos que se llamó al módulo
+    expect(externalModule.fetchData).toHaveBeenCalled();
+
+    // 5️⃣ Validamos el resultado simulado
+    expect(result).toBe(20);
+  });
+});
+
 });
