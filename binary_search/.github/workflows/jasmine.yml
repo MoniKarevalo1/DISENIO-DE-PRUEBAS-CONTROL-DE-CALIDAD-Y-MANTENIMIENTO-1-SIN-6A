@@ -2,7 +2,7 @@
 name: Jasmine Tests
 
 on:
-  push:        # Se ejecuta en cada push
+  push:        # Se ejecuta en cada push al branch Autónomo-1
     branches: [ Autónomo-1 ]
   pull_request: # También en cada PR
     branches: [ Autónomo-1 ]
