@@ -6,9 +6,9 @@
     "test": "mocha",
     "test:jasmine": "jasmine"
   },
-
   "devDependencies": {
     "chai": "^4.5.0",
+    "jasmine": "^5.1.0",
     "mocha": "^10.8.2"
   },
   "main": "binarySearch.js",
@@ -97,5 +97,4 @@
     "yocto-queue": "^0.1.0"
   },
   "description": ""
- 
 }
