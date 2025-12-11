@@ -1,0 +1,27 @@
+# Workflow de GitHub Actions para ejecutar Jasmine
+name: Jasmine Tests
+
+on:
+  push:        # Se ejecuta en cada push
+    branches: [ main ]
+  pull_request: # También en cada PR
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Entorno Linux
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Descarga el repo
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'       # Versión Node
+
+    - name: Install dependencies
+      run: npm install           # Instala dependencias
+
+    - name: Run Jasmine tests
+      run: npx jasmine           # Ejecuta pruebas Jasmine

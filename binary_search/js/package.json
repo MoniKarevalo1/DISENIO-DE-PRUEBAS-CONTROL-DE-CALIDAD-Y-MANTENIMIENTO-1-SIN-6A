@@ -4,7 +4,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "mocha",
-    "test:jasmine": "jasmine"   // comando para correr Jasmine
+    "test:jasmine": "jasmine"
   },
 
   "devDependencies": {
