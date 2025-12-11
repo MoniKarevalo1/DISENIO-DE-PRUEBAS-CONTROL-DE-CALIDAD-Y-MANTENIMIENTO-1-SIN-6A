@@ -3,9 +3,9 @@ name: Jasmine Tests
 
 on:
   push:        # Se ejecuta en cada push
-    branches: [ main ]
+    branches: [ Autónomo-1 ]
   pull_request: # También en cada PR
-    branches: [ main ]
+    branches: [ Autónomo-1 ]
 
 jobs:
   test:
