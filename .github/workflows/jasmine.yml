@@ -5,7 +5,7 @@ on:
   push:
     branches: [ "Autónomo-1" ]
   pull_request:
-    branches: [ "Autónomo-1" ]
+    branches: [ "main" ]
 
 jobs:
   test:
