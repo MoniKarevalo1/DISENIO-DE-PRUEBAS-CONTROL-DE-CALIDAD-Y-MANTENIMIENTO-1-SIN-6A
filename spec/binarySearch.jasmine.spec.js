@@ -2,10 +2,13 @@
 const {
   findIndex, contains, find,
   findLeftmostIndex, findRightmostIndex,
-  findAllIndices, findLeftmost, findRightmost, findAll
-} = require("../binary_search/js/binarySearchLogic"); // uta corregida
+  findAllIndices, findLeftmost, findRightmost, findAll,
+  processExternalData // ✅ si lo exportaste en binarySearchLogic.js
+} = require("../binary_search/js/binarySearchLogic");
 
-const externalModule = require("../binary_search/js/externalModule"); // import fuera del describe
+const externalModule = require("../binary_search/js/externalModule"); 
+const logic = require("../binary_search/js/binarySearchLogic");
+
 
 // Suite de pruebas con Jasmine
 describe("Binary Search (Jasmine)", () => {
@@ -38,18 +41,13 @@ describe("Binary Search (Jasmine)", () => {
 
 describe("Mocking avanzado con Jasmine", () => {
   it("simula el módulo externo con espía personalizado", async () => {
-    // 1️⃣ Interceptamos la función externa
     spyOn(externalModule, "fetchData").and.callFake(() => {
-      return Promise.resolve({ value: 10 }); // simulamos respuesta
+      return Promise.resolve({ value: 10 });
     });
 
-    // 2️⃣ Ejecutamos la función que depende del módulo
-    const result = await logic.processExternalData();
+    const result = await processExternalData(); // se realizo la importación arriba
 
-    // 3️⃣ Verificamos que se llamó al módulo
     expect(externalModule.fetchData).toHaveBeenCalled();
-
-    // 4️⃣ Validamos el resultado simulado
     expect(result).toBe(20);
   });
 });
