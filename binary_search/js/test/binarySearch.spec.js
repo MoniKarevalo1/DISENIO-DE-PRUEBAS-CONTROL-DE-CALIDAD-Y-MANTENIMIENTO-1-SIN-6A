@@ -75,7 +75,7 @@ describe('Binary Search (JS)', () => {
 
     it('single element', () => {
       expect(findIndex([5], 5)).to.equal(0);
-      expect(findIndex([5], 6)).to.equal(null);
+      expect(findIndex([5], 6)).to.equal(null); // Prueba de integración con GitHub Actions
     });
   });
 });
