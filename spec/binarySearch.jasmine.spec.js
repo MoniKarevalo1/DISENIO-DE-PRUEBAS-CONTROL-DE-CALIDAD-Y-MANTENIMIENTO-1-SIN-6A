@@ -45,9 +45,11 @@ describe("Mocking avanzado con Jasmine", () => {
       return Promise.resolve({ value: 10 });
     });
 
-    const result = await processExternalData(); // se realizo la importación arriba
-
+       // Ejecutamos la función que depende del módulo
+    const result = await processExternalData(); // se realizo la importación arriba en el encabezado
+      // Verificamos que se llamó al módulo
     expect(externalModule.fetchData).toHaveBeenCalled();
+       // Validamos el resultado simulado
     expect(result).toBe(20);
   });
 });
