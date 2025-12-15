@@ -8,7 +8,7 @@ const { findIndex, contains, find,
 const externalModule = require("../binary_search/js/externalModule");
 const logic = require("../binary_search/js/binarySearchLogic");     
 // Suite de pruebas con Jasmine
-describe("Binary Search (AI Generated)", () => {
+describe("Binary Search (AI Generated - Básico)", () => {
   // Caso: valor existente
   it("finds index of existing value", () => {
     const arr = [1, 3, 5, 7, 9];
@@ -33,7 +33,7 @@ describe("Binary Search (AI Generated)", () => {
     }     );
 });                          
 
-describe("Binary Search (AI Generated)", () => {                                                
+describe("Binary Search (AI Generated - Mocking)", () => {                                                
     it("simula el módulo externo con espía personalizado", async () => {
 
     spyOn(externalModule, "fetchData").and.callFake(() => {
