@@ -1,6 +1,7 @@
-function fetchData() {
-  // Simula una llamada externa (API, base de datos, etc.)
-  return Promise.resolve({ value: 42 }); //Creación de módulo externo simulado
+// externalModule.js
+async function fetchData() {
+  // En un caso real, podría traer datos de una API
+  return { value: 42 };
 }
 
 module.exports = { fetchData };
