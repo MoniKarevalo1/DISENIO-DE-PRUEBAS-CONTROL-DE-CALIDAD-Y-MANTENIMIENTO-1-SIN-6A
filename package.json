@@ -1,5 +1,13 @@
 {
+  "name": "disenio-pruebas",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha",
+    "test:jasmine": "jasmine"
+  },
   "devDependencies": {
-    "jasmine": "^5.13.0"
+    "jasmine": "^5.1.0",
+    "mocha": "^10.8.2",
+    "chai": "^4.5.0"
   }
 }
