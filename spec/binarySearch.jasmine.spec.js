@@ -11,7 +11,7 @@ const logic = require("../binary_search/js/binarySearchLogic");
 
 
 // Suite de pruebas con Jasmine
-describe("Binary Search (Jasmine)", () => {
+describe("Binary Search Manual", () => {
   // Caso: valor existente
   it("finds index of existing value", () => {
     const arr = [1, 3, 5, 7, 9];
@@ -39,6 +39,7 @@ describe("Binary Search (Jasmine)", () => {
   });
 });
 
+  // Se muestra la forma de hacer mocking con Jasmine
 describe("Mocking avanzado con Jasmine", () => {
   it("simula el módulo externo con espía personalizado", async () => {
     spyOn(externalModule, "fetchData").and.callFake(() => {
