@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "scripts": {
     "test": "mocha",
-    "test:jasmine": "jasmine"
+    "test:jasmine": "jasmine",
+    "test:mutation": "stryker run",
+    "test:contracts": "jasmine \"spec/contract/**/*.spec.js\""
   },
   "devDependencies": {
     "@pact-foundation/pact": "^16.0.2",
+    "@pact-foundation/pact-node": "^10.18.0",
     "@stryker-mutator/core": "^9.4.0",
     "@stryker-mutator/jasmine-runner": "^9.4.0",
     "chai": "^4.5.0",
     "fast-check": "^4.4.0",
     "jasmine": "^5.13.0",
-    "mocha": "^10.8.2"
+    "mocha": "^10.8.2",
+    "node-fetch": "^2.7.0"
   }
 }
