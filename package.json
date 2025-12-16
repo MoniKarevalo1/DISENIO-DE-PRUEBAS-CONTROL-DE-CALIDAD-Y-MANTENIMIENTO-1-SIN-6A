@@ -16,6 +16,7 @@
     "fast-check": "^4.4.0",
     "jasmine": "^5.13.0",
     "mocha": "^10.8.2",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "supertest": "^7.1.4"
   }
 }
