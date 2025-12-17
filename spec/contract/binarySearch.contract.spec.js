@@ -1,4 +1,4 @@
-// Importamos las funciones de búsqueda binaria desde tu archivo principal
+// Importamos las funciones de búsqueda binaria
 const {
   findIndex,
   contains,
