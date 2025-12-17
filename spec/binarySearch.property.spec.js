@@ -1,6 +1,6 @@
 // Importamos Supertest, que nos permite simular peticiones HTTP a un servidor Express
 const request = require("supertest");
-// Importamos Express para crear un servidor de prueba
+// Importamos Express para crear un servidor de prueba ligero
 const express = require("express");
 
 // Definimos un bloque de pruebas con Jasmine
