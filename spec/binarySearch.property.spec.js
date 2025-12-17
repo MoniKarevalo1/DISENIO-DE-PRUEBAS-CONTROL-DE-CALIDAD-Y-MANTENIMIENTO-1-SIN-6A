@@ -13,9 +13,7 @@ const provider = new Pact({
 
 describe("Consumer contract test", () => {
   beforeAll(async () => {
-    // espera a que el mock server esté listo
-    await provider.setup();
-
+    await provider.setup(); // levanta el mock server
     await provider.addInteraction({
       state: "provider has data",
       uponReceiving: "a request for external data",
@@ -32,13 +30,13 @@ describe("Consumer contract test", () => {
   });
 
   it("should receive the expected response", async () => {
-    const response = await fetch("http://127.0.0.1:1234/data"); // usa 127.0.0.1 en vez de ::1
+    const response = await fetch("http://127.0.0.1:1234/data");
     const json = await response.json();
     expect(json).toEqual({ value: 10 });
   });
 
   afterAll(async () => {
-    await provider.verify();   // comprueba que se cumplieron las interacciones
-    await provider.stop();     // cierra el mock server en v0.4.x
+    await provider.writePact(); // escribe el contrato pactado
+    await provider.stop();      // cierra el mock server
   });
 });
