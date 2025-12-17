@@ -7,9 +7,10 @@ const { findIndex, contains, find,
 
 const externalModule = require("../binary_search/js/externalModule");
 const logic = require("../binary_search/js/binarySearchLogic");     
+
 // Suite de pruebas con Jasmine
 describe("Binary Search (AI Generated - Básico)", () => {
-  // Caso: valor existente
+  // Caso: valor existente  
   it("finds index of existing value", () => {
     const arr = [1, 3, 5, 7, 9];
     expect(findIndex(arr, 7)).toBe(3);
@@ -35,19 +36,15 @@ describe("Binary Search (AI Generated - Básico)", () => {
 
 describe("Binary Search (AI Generated - Mocking)", () => {                                                
     it("simula el módulo externo con espía personalizado", async () => {
-
-    spyOn(externalModule, "fetchData").and.callFake(() => {
-        return Promise.resolve({ value: 10 });
-    });
-
-       // Ejecutamos la función que depende del módulo
-    const result = await processExternalData(); // se realizo la importación arriba en el encabezado
-      // Verificamos que se llamó al módulo
-    expect(externalModule.fetchData).toHaveBeenCalled();
-       // Validamos el resultado simulado
-    expect(result).toBe(20);
+  spyOn(externalModule, "fetchData").and.callFake(() => {
+    return Promise.resolve({ value: 10 });
   });
-});                 
 
+  // await dentro de función asyncrónica de prueba
+  const result = await processExternalData(externalModule.fetchData);
 
-
+  expect(externalModule.fetchData).toHaveBeenCalled();
+  expect(result).toBe(20);
+});
+          
+});
