@@ -13,7 +13,7 @@ const provider = new Pact({
 
 describe("Consumer contract test", () => {
   beforeAll(async () => {
-    await provider.setup(); // levanta el mock server
+    await provider.setup();
     await provider.addInteraction({
       state: "provider has data",
       uponReceiving: "a request for external data",
@@ -36,7 +36,6 @@ describe("Consumer contract test", () => {
   });
 
   afterAll(async () => {
-    await provider.writePact(); // escribe el contrato pactado
-    await provider.stop();      // cierra el mock server
+    await provider.finalize(); // en 0.4.x este es el método correcto
   });
 });
