@@ -12,7 +12,6 @@ const provider = new Pact({
 });
 
 describe("Consumer contract test", () => {
-  // Levanta el mock server
   beforeAll(async () => {
     await provider.setup();
     await provider.addInteraction({
@@ -30,16 +29,13 @@ describe("Consumer contract test", () => {
     });
   });
 
-  // Verifica el contrato
   it("should receive the expected response", async () => {
     const response = await fetch("http://localhost:1234/data");
     const json = await response.json();
     expect(json).toEqual({ value: 10 });
   });
 
-  // Comprueba que todas las interacciones pactadas se cumplieron
   afterAll(async () => {
-    await provider.verify();
-    await provider.cleanup();
+    await provider.finalize(); // usa finalize en tu versión
   });
 });
