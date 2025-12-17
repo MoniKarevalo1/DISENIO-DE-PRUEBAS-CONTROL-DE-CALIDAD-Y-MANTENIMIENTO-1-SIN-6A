@@ -36,7 +36,6 @@ describe("Consumer contract test", () => {
   });
 
   afterAll(async () => {
-    await provider.verify();   // comprueba que se cumplieron las interacciones
-    await provider.stop();     // cierra el mock server en v0.4.x
+    await provider.finalize(); // en tu versión, usa finalize
   });
 });
