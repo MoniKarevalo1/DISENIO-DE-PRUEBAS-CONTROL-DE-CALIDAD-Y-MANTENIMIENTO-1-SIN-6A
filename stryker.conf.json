@@ -6,5 +6,8 @@
   ],
   "jasmineConfigFile": "spec/support/jasmine.json",
   "coverageAnalysis": "off",
-  "reporters": ["progress", "clear-text", "html"]
+  "reporters": ["progress", "clear-text", "html"],
+  "ignorePatterns": [
+    "spec/binarySearch.property.spec.js"
+  ]
 }
