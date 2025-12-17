@@ -9,6 +9,8 @@ describe("Contract: processExternalData consumer", () => {
     app.get("/data", (req, res) => res.json({ value: 10 }));
   });
 
+  //Se verifica que el proveedor cumple con el contrato
+
   it("should receive the expected response", async () => {
     const res = await request(app).get("/data");
     expect(res.body).toEqual({ value: 10 });
