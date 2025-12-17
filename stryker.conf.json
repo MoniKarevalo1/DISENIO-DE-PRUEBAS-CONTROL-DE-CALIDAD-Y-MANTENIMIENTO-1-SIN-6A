@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker-js/master/packages/core/schema/stryker-schema.json",
+  "testRunner": "jasmine",
+  "mutate": [
+    "binary_search/js/binarySearchLogic.js"
+  ],
+  "jasmineConfigFile": "spec/support/jasmine.json",
+  "coverageAnalysis": "off",
+  "reporters": ["progress", "clear-text", "html"]
+}
