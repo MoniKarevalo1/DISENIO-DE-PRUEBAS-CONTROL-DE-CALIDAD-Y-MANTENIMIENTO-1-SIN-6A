@@ -6,13 +6,15 @@ const externalModule = require("./externalModule");
  * Recibe como argumento un "fetcher" (función que retorna una promesa con { value: number }).
  * Valida el contrato y aplica una regla de negocio: duplicar el valor recibido.
  */
-async function processExternalData(fetcher = async () => ({ value: 10 })) {
-  const data = await fetcher();
+async function processExternalData(fetcher) {
+  const fn = fetcher || externalModule.fetchData; // usa el espía si existe
+  const data = await fn();
   if (!data || typeof data.value !== "number") {
     throw new Error("Invalid contract: value must be a number");
   }
   return data.value * 2;
 }
+
 
 
 /**
