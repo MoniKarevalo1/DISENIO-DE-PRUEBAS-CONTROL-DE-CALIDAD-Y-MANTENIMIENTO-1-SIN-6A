@@ -12,7 +12,7 @@ const {
 } = require("../../binary_search/js/binarySearchLogic");
 
 describe("Contract testing: binary search functions", () => {
-  // Caso básico: el contrato dice que si el elemento existe, devuelve su índice
+  // Caso básico: el contrato dice que si el elemento existe, devuelve su índice correcto
   it("findIndex returns correct index when element exists", () => {
     expect(findIndex([1,2,3,4,5], 3)).toBe(2);
   });
