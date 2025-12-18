@@ -13,7 +13,7 @@ describe("Binary Search Timing Tests", () => {
     // Creamos un arreglo grande de 10,000 elementos ordenados
     const arr = Array.from({length: 10000}, (_, i) => i);
 
-    // Definimos el valor que queremos buscar (último elemento)
+    // Definimos el valor que queremos buscar
     const target = 9999;
 
     // Guardamos el tiempo de inicio antes de ejecutar la función
