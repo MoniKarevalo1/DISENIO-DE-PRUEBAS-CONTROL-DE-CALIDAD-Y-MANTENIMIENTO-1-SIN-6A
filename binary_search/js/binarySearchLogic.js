@@ -15,11 +15,7 @@ async function processExternalData(fetcher) {
   return data.value * 2;
 }
 
-
-
-/**
- * Función básica de búsqueda binaria.
- * Permite opcionalmente aplicar una función de transformación (keyFn) sobre los elementos.
+ /* Permite opcionalmente aplicar una función de transformación (keyFn) sobre los elementos.
  */
 function findIndex(arr, target, keyFn = x => x) {
   let left = 0;
@@ -34,6 +30,11 @@ function findIndex(arr, target, keyFn = x => x) {
   return null;
 }
 
+/**
+ * Función básica de búsqueda binaria*/
+function binarySearch(arr, target, keyFn = x => x) {
+  return findIndex(arr, target, keyFn);
+}
 /**
  * Verifica si un valor existe en el arreglo.
  */
@@ -142,5 +143,6 @@ module.exports = {
   findLeftmost,
   findRightmost,
   findAll,
-  processExternalData
+  processExternalData,
+  binarySearch
 };
