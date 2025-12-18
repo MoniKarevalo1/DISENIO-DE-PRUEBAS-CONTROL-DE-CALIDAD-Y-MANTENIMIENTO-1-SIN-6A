@@ -1,0 +1,37 @@
+
+      <html>
+      <head>
+        <style>
+          table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+          th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+          th { background-color: #f2f2f2; }
+          .red { background-color: #ffcccc; }     /* Alto riesgo en rojo */
+          .orange { background-color: #ffe5b4; }  /* Medio riesgo en naranja */
+          .green { background-color: #ccffcc; }   /* Bajo riesgo en verde */
+        </style>
+      </head>
+      <body>
+      <h2 style="text-align:center;">Reporte de Priorización de Riesgos</h2>
+      <table>
+        <tr><th>Caso</th><th>Probabilidad</th><th>Impacto</th><th>Nivel</th><th>Resultado</th></tr>
+        <tr class="green">
+            <td>Large array, target present</td>
+            <td>Baja (20%)</td>
+            <td>Bajo</td>
+            <td>Bajo</td>
+            <td>50</td>
+          </tr><tr class="orange">
+            <td>Small array, target not found</td>
+            <td>Media (50%)</td>
+            <td>Moderado</td>
+            <td>Medio</td>
+            <td>null</td>
+          </tr><tr class="red">
+            <td>Empty array</td>
+            <td>Alta (80%)</td>
+            <td>Crítico</td>
+            <td>Alto</td>
+            <td>null</td>
+          </tr>
+      </table>
+      </body></html>
