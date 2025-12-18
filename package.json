@@ -8,7 +8,8 @@
     "test:mutation": "stryker run",
     "test:contracts": "jasmine \"spec/contract/**/*.spec.js\"",
     "metrics:complexity": "plato -d reports/complexity binary_search/js/*.js spec/**/*.js",
-    "test:flaky": "npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine"
+    "test:flaky": "npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine",
+    "test:coverage": "nyc npm run test:jasmine"
   },
   "devDependencies": {
     "@pact-foundation/pact": "16.0.2",
@@ -19,6 +20,7 @@
     "jasmine": "^5.13.0",
     "mocha": "^10.8.2",
     "node-fetch": "^2.7.0",
+    "nyc": "^17.1.0",
     "plato": "^1.7.0",
     "supertest": "^7.1.4"
   }
