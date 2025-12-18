@@ -3,7 +3,7 @@
 const { performance } = require('perf_hooks');
 
 // Importamos la función de búsqueda binaria desde nuestro archivo de lógica
-const binarySearch  = require('../binary_search/js/binarySearchLogic');
+const { binarySearch } = require('../binary_search/js/binarySearchLogic');
 
 // Definimos un bloque de pruebas con Jasmine
 describe("Binary Search Timing Tests", () => {
