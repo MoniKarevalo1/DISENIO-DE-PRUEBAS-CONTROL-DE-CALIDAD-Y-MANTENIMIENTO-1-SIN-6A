@@ -1,15 +1,17 @@
 {
   "name": "disenio-pruebas",
   "version": "1.0.0",
+  "description": "Proyecto de diseño de pruebas con Jasmine, Mocha, Stryker y Pact",
   "scripts": {
     "test": "mocha",
     "test:jasmine": "jasmine",
     "test:mutation": "stryker run",
-    "test:contracts": "jasmine \"spec/contract/**/*.spec.js\""
+    "test:contracts": "jasmine \"spec/contract/**/*.spec.js\"",
+    "metrics:complexity": "plato -d reports/complexity binary_search/js/*.js spec/**/*.js",
+    "test:flaky": "npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "^16.0.2",
-    "@pact-foundation/pact-node": "^10.18.0",
+    "@pact-foundation/pact": "16.0.2",
     "@stryker-mutator/core": "^9.4.0",
     "@stryker-mutator/jasmine-runner": "^9.4.0",
     "chai": "^4.5.0",
@@ -17,6 +19,7 @@
     "jasmine": "^5.13.0",
     "mocha": "^10.8.2",
     "node-fetch": "^2.7.0",
+    "plato": "^1.7.0",
     "supertest": "^7.1.4"
   }
 }
