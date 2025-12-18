@@ -1,5 +1,5 @@
 // Importamos la API de rendimiento de Node.js
-// 'performance.now()' nos permite medir tiempos en milisegundos
+// 'performance.now()' nos permite medir tiempos en milisegundos con alta precisión
 const { performance } = require('perf_hooks');
 
 // Importamos la función de búsqueda binaria desde nuestro archivo de lógica
