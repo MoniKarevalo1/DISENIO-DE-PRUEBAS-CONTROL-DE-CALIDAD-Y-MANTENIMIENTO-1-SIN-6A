@@ -2,7 +2,6 @@
 // Se integra dentro de Jasmine para mostrar resultados en consola.
 
 // Importamos la clase ESLint desde la librería instalada en el proyecto
-// spec/binarySearch.static.spec.js
 // Para proyectos CommonJS
 const { ESLint } = require("eslint/use-at-your-own-risk");
 
