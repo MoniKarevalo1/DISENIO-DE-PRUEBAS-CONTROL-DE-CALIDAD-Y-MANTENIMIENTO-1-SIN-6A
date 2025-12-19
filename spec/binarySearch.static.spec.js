@@ -2,8 +2,8 @@
 // Se integra dentro de Jasmine para mostrar resultados en consola.
 
 // Importamos la clase ESLint desde la librería instalada en el proyecto
-// Para proyectos CommonJS
-const { ESLint } = require("eslint/use-at-your-own-risk");
+
+const { ESLint } = require("eslint");
 
 describe("Static Analysis of binarySearchLogic.js", () => {
   it("should detect style or syntax issues", async () => {
