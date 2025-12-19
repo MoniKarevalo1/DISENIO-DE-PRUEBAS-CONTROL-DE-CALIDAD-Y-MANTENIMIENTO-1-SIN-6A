@@ -3,7 +3,8 @@
 
 // Importamos la clase ESLint desde la librería instalada en el proyecto
 // spec/binarySearch.static.spec.js
-const { ESLint } = require("eslint");
+// Para proyectos CommonJS
+const { ESLint } = require("eslint/use-at-your-own-risk");
 
 describe("Static Analysis of binarySearchLogic.js", () => {
   it("should detect style or syntax issues", async () => {
