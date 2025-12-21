@@ -11,7 +11,7 @@ const logic = require("../binary_search/js/binarySearchLogic");
 
 
 
-// Suite de pruebas con Jasmine
+// Suite de pruebas con Jasmine en el código
 describe("Binary Search Manual", () => {
   // Caso: valor existente
   it("finds index of existing value", () => {
