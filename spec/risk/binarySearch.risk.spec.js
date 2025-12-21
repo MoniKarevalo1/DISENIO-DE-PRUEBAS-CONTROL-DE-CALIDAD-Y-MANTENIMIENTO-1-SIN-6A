@@ -1,4 +1,5 @@
 // Importamos la función binarySearch desde nuestro archivo de lógica
+
 const { binarySearch } = require("../../binary_search/js/binarySearchLogic");
 
 // Importamos el módulo 'fs' de Node.js para poder escribir archivos en disco
