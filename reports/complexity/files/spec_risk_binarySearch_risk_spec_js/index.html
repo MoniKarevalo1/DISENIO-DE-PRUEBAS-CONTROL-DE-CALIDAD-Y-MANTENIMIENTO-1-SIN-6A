@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - spec/risk/binarySearch.risk.spec.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>spec/risk/binarySearch.risk.spec.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">71.36</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">60</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">8.06</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">0.45</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">// Importamos la función binarySearch desde nuestro archivo de lógica
+const { binarySearch } = require(&quot;../../binary_search/js/binarySearchLogic&quot;);
+
+// Importamos el módulo &#039;fs&#039; de Node.js para poder escribir archivos en disco
+const fs = require(&quot;fs&quot;);
+
+// Definimos un bloque de pruebas Jasmine para casos basados en riesgo
+describe(&quot;Binary Search – Risk Analysis&quot;, () =&gt; {
+  // Arreglo donde guardaremos los resultados de cada caso con su nivel de riesgo
+  const riskResults = [];
+
+  // Caso de ALTO riesgo: buscar en un arreglo vacío
+  // Probabilidad alta de error + impacto crítico
+  it(&quot;High risk: empty array search&quot;, () =&gt; {
+    const arr = []; // arreglo vacío
+    const target = 5; // valor a buscar
+    const result = binarySearch(arr, target); // ejecución de la función
+    // Guardamos evidencia con clasificación de riesgo
+    riskResults.push({case:&quot;Empty array&quot;, prob:&quot;Alta&quot;, impact:&quot;Crítico&quot;, nivel:&quot;Alto&quot;, result});
+    // Validamos que el resultado sea nulo (no encontrado)
+    expect(result).toBeNull();
+  });
+
+  // Caso de MEDIO riesgo: arreglo pequeño con target inexistente
+  // Probabilidad media de error + impacto moderado
+  it(&quot;Medium risk: small array with target not found&quot;, () =&gt; {
+    const arr = [1, 2, 3]; // arreglo pequeño
+    const target = 10; // valor que no existe en el arreglo
+    const result = binarySearch(arr, target);
+    riskResults.push({case:&quot;Small array, target not found&quot;, prob:&quot;Media&quot;, impact:&quot;Moderado&quot;, nivel:&quot;Medio&quot;, result});
+    expect(result).toBeNull(); // debe devolver null
+  });
+
+  // Caso de BAJO riesgo: arreglo grande con target presente
+  // Probabilidad baja de error + impacto bajo
+  it(&quot;Low risk: large array with target present&quot;, () =&gt; {
+    const arr = Array.from({length: 100}, (_, i) =&gt; i); // arreglo de 0 a 99
+    const target = 50; // valor que sí existe
+    const result = binarySearch(arr, target);
+    riskResults.push({case:&quot;Large array, target present&quot;, prob:&quot;Baja&quot;, impact:&quot;Bajo&quot;, nivel:&quot;Bajo&quot;, result});
+    expect(result).toBe(target); // debe devolver la posición correcta
+  });
+
+  // Al finalizar todas las pruebas, generamos un reporte HTML con los resultados
+  afterAll(() =&gt; {
+    // Construimos un HTML con tabla de riesgos
+    const html = `
+      &lt;html&gt;&lt;body&gt;
+      &lt;h2&gt;Reporte de Priorización de Riesgos&lt;/h2&gt;
+      &lt;table border=&quot;1&quot;&gt;
+        &lt;tr&gt;&lt;th&gt;Caso&lt;/th&gt;&lt;th&gt;Probabilidad&lt;/th&gt;&lt;th&gt;Impacto&lt;/th&gt;&lt;th&gt;Nivel&lt;/th&gt;&lt;th&gt;Resultado&lt;/th&gt;&lt;/tr&gt;
+        ${riskResults.map(r =&gt; `&lt;tr&gt;&lt;td&gt;${r.case}&lt;/td&gt;&lt;td&gt;${r.prob}&lt;/td&gt;&lt;td&gt;${r.impact}&lt;/td&gt;&lt;td&gt;${r.nivel}&lt;/td&gt;&lt;td&gt;${r.result}&lt;/td&gt;&lt;/tr&gt;`).join(&quot;&quot;)}
+      &lt;/table&gt;
+      &lt;/body&gt;&lt;/html&gt;`;
+    
+    // Guardamos el archivo en disco
+    fs.writeFileSync(&quot;risk-report.html&quot;, html);
+    console.log(&quot;Reporte de riesgos generado: risk-report.html&quot;);
+  });
+});</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>
