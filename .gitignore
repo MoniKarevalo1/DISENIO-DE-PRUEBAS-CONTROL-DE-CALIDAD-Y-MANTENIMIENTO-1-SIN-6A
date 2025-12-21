@@ -1,0 +1,14 @@
+# Dependencias
+node_modules/
+
+# Archivos de lock
+package-lock.json
+
+# Reportes y temporales
+.nyc_output/
+.stryker-tmp/
+reports/mutation/*.html
+.coverage
+
+# Logs
+*.log
