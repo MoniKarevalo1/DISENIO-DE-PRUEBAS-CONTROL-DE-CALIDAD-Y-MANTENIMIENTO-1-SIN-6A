@@ -1,2 +1,5 @@
 node_modules/
 .stryker-tmp/
+reports/mutation/*.html
+package-lock.json
+.nyc_output/
