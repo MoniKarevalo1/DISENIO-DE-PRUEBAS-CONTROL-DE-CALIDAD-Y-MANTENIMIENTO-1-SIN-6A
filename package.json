@@ -19,6 +19,7 @@
     "test:flaky": "npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine && npm run test:jasmine",
     "test:coverage": "nyc npm run test:jasmine",
     "lint": "eslint binary_search/js/binarySearchLogic.js"
+    
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
