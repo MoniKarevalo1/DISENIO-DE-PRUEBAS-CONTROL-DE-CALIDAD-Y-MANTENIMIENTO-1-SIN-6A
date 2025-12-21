@@ -1,0 +1,5 @@
+[
+  { "mod": "small-arr",  "fails": 1, "hours": 300, "CC": 6,  "LOC": 90,  "usage": 1500 },
+  { "mod": "medium-arr", "fails": 2, "hours": 280, "CC": 7,  "LOC": 120, "usage": 1100 },
+  { "mod": "large-arr",  "fails": 4, "hours": 250, "CC": 8,  "LOC": 160, "usage": 800 }
+]
