@@ -1,5 +1,5 @@
 // Importamos la función binarySearch desde la lógica principal
-const { binarySearch } = require("../../../binary_search/js/binarySearchLogic");
+const { binarySearch } = require("../../binary_search/js/binarySearchLogic");
 
 // Definimos el bloque de pruebas combinatorias
 describe("Pruebas combinatorias de binarySearch", () => {
