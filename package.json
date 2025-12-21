@@ -22,7 +22,8 @@
     "test:unit:new": "jasmine spec/test_suite/unit/binarySearch.unit.spec.js", 
     "test:coverage:new": "nyc jasmine spec/test_suite/coverage/binarySearch.coverage.spec.js", 
     "test:mutation:new": "stryker run",
-    "test:combinatorial:new": "jasmine spec/combinatorial_new/binarySearch.combinatorial.spec.js"
+    "test:combinatorial:new": "jasmine spec/combinatorial_new/binarySearch.combinatorial.spec.js",
+    "test:nocode": "jasmine spec/nocode/binarySearch.nocode.spec.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
