@@ -4,10 +4,7 @@
   "mutate": [
     "binary_search/js/binarySearchLogic.js"
   ],
-  "jasmineConfigFile": "spec/support/jasmine.json",
+  "jasmineConfigFile": "spec/support/jasmine.stryker.json",
   "coverageAnalysis": "off",
-  "reporters": ["progress", "clear-text", "html"],
-  "ignorePatterns": [
-    "spec/binarySearch.property.spec.js"
-  ]
+  "reporters": ["progress", "clear-text", "html"]
 }
